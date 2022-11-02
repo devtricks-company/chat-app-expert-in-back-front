@@ -12,7 +12,7 @@ import {
 
 const LoginPage = () => {
   return (
-    <Page>
+    <Page display="flex" justifyContent="center" alignItems="center">
       <LoginFormComponent />
     </Page>
   );

@@ -6,7 +6,7 @@ interface authenticationProps {}
 
 const RegisterPage: FC<authenticationProps> = ({}) => {
   return (
-    <Page>
+    <Page display="flex" justifyContent="center" alignItems="center">
       <RegisterForm />
     </Page>
   );
