@@ -1,4 +1,5 @@
 import React from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import {
   FormContainer,
@@ -9,19 +10,39 @@ import {
 } from "../../utils/styles";
 import styles from "../../utils/styles/index.module.scss";
 
+type loginType = {
+  email: string;
+  password: string;
+};
+
 const LoginFormComponent = () => {
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<loginType>();
+
+  console.log(errors);
+  const onSubmit: SubmitHandler<loginType> = (data) => {
+    console.log(data);
   };
   return (
-    <FormContainer onSubmit={onSubmit}>
+    <FormContainer onSubmit={handleSubmit(onSubmit)}>
       <InputContainer>
         <InputLabel htmlFor="email">Email: </InputLabel>
-        <InputField type="email" id="email" />
+        <InputField
+          type="email"
+          id="email"
+          {...register("email", { required: "the email is required" })}
+        />
       </InputContainer>
       <InputContainer className={styles.lastName}>
         <InputLabel htmlFor="password"> Password: </InputLabel>
-        <InputField type="password" id="password" />
+        <InputField
+          type="password"
+          id="password"
+          {...register("password", { required: "the password is required" })}
+        />
       </InputContainer>
       <Button className={styles.button}>Login</Button>
       <div className={styles.existingUser}>
