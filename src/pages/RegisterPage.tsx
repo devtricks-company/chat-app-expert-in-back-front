@@ -4,7 +4,7 @@ import { Page } from "../utils/styles";
 
 interface authenticationProps {}
 
-const AuthenticationPage: FC<authenticationProps> = ({}) => {
+const RegisterPage: FC<authenticationProps> = ({}) => {
   return (
     <Page>
       <RegisterForm />
@@ -12,4 +12,4 @@ const AuthenticationPage: FC<authenticationProps> = ({}) => {
   );
 };
 
-export default AuthenticationPage;
+export default RegisterPage;

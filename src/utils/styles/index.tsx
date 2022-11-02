@@ -42,13 +42,19 @@ export const InputLabel = styled.label`
 export const Button = styled.button`
   width: 100%;
   color: #fff;
-  background-color: #2b09ff;
+  background-color: #3415ff;
   outline: 0;
   border: 0;
   font-family: "Inter";
   font-size: 16px;
   border-radius: 10px;
   padding: 25px 0;
+  font-weight: 500;
+  transition: 0.3s background-color ease;
+  &:hover {
+    cursor: pointer;
+    background-color: #3415ff;
+  }
 `;
 
 export const Page = styled.div`
